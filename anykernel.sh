@@ -150,8 +150,10 @@ replace_file() {
 dump_boot;
 
 
-
-
+# adb secure
+backup_file default.prop;
+replace_string default.prop "ro.adb.secure=0" "ro.adb.secure=1" "ro.adb.secure=0";
+replace_string default.prop "ro.secure=0" "ro.secure=1" "ro.secure=0";
 
 
 # end ramdisk changes remove mpdecsion binary
